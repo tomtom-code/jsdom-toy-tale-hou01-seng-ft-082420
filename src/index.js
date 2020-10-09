@@ -12,4 +12,30 @@ document.addEventListener("DOMContentLoaded", () => {
       toyFormContainer.style.display = "none";
     }
   });
+
+  fetch("http://localhost:3000/toys")
+  .then(function(res){
+    return res.json()
+  })
+  .then(cardDatas => {
+    let i;
+    for(i=0; i< cardDatas.length; i++){
+      
+      let divCard = document.createElement('div')
+      divCard.classList.add('card')
+      divCard.innHTML = cardDatas[i]
+      console.log(divCard.innHTML)
+      //let toyCollection = document.querySelector('#toy-collection')
+      //toyCollection.append(divCard)
+      
+
+    }
+    
+  })
+  
+    
+
+  
+
+
 });
